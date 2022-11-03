@@ -1,0 +1,32 @@
+---
+title: "This is my personal website"
+---
+
+
+A bit about myself:
+
+I did my undergraduate degree from McGill University. I worked for an investment firm for an year, after which I started my Masters degree in Biostatistics at Columbia University. I really liked surfing over the past summer.
+
+Tap [here](https://www.linkedin.com/in/jagjit-s-98460a9b/) to check my LinkedIn!
+
+
+PUBLICATIONS:
+
+1)	Singh, J., Ardian, A., Kumral, M.: Gold Copper Mining Investment Evaluation Through Multivariate Copula-Innovated Simulations. Mining, Metallurgy & Exploration, Springer.
+
+2)	Williams, J., Singh, J., Kumral, M., Ruiseco, R.J.: Exploring Deep Learning for Dig Limit Optimization in Open-Pit Mines. Natural Resources Research, Springer.
+
+PROFESSIONAL EXPERIENCE:
+
+**New York Genome Center** 
+
+•	Implementing multiplexed proteomic spatial and single-cell analysis of whole mouse and human tissue sections from imaging datasets obtained via a repurposed Illumina HiSeq 2500 instrument.
+
+•	Performing anatomical annotation of sections, identifying cell types, reporting spatiotemporal patterns, and building an image deconvolution pipeline to increase the resolution of images. 
+
+**FMI Technologies LLC**
+
+•	Managing all information technology, order execution, and post-trade analysis for the Indian equity trading arm.
+
+•	Selecting equities to trade by studying the non-linear and non-stationary statistics of the price process.
+•	Developing cloud-based solutions for parallel processing. 

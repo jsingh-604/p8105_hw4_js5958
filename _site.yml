@@ -1,0 +1,17 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About Me"
+      href: about.html
+    - text: "Question 2"
+      href: Question-2.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<js5958@columbia.edu>
+    - icon: fa-github fa-lg
+      href: https://github.com/jsingh-604/p8105_hw4_js5958_main
+output:
+  html_document:
+    theme: darkly
+    css: style.css
