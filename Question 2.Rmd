@@ -57,13 +57,13 @@ modified_df %>%
           type = "box") %>%
   layout(
     title = 
-      "Average Max Temperature Patter for Each Month from 1992-2007 in Celcius", 
+      "Average Max Temperature Pattern for Each Month from 1992-2007 in Celcius", 
     xaxis = 
       list(title = 
              "Month"),
     yaxis = 
       list(title = 
-             "(Mean) Max Temperature (ºC)")) 
+             "(Average) Max Temperature (ºC)")) 
 ```
 
 Column {data-width=350}
@@ -120,5 +120,5 @@ modified_df %>%
                   "Month"),
          yaxis = 
            list(title = 
-                  "Mean Precipitation (mm)"))
+                  "Average Precipitation (mm)"))
 ```
