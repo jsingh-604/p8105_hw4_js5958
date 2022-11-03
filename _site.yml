@@ -10,7 +10,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<js5958@columbia.edu>
     - icon: fa-github fa-lg
-      href: https://github.com/jsingh-604/p8105_hw4_js5958_main
+      href: https://github.com/jsingh-604/p8105_hw4_js5958
 output:
   html_document:
     theme: darkly
