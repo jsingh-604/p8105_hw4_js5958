@@ -8,9 +8,11 @@ navbar:
     - text: "Question 2"
       href: Question-2.html
     - icon: fa-envelope fa-lg
-      href: mailto:<js5958@columbia.edu>
+      href: mailto:<jagg2106@gmail.com>
     - icon: fa-github fa-lg
       href: https://github.com/jsingh-604/p8105_hw4_js5958
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/jagjit-s-98460a9b/
 output:
   html_document:
     theme: darkly
