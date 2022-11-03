@@ -1,0 +1,124 @@
+---
+title: "Question 2"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r}
+library(flexdashboard)
+```
+
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+noaa_df <- 
+  ny_noaa %>%
+  janitor::clean_names() %>%
+  mutate(tmax = as.double(tmax)/10, # converting back to Celsius
+         tmin = as.double(tmin)/10, # converting back to Celsius
+         prcp = as.double(prcp),
+         snow = as.double(snow),
+         snwd = as.double(snwd),
+         id = as.factor(id),
+         prcp = prcp/10)
+
+noaa_df = drop_na(noaa_df)
+
+
+modified_df <- 
+  noaa_df%>% 
+  sample_n(10000) %>%
+  separate(col = date, into = c("year","month", "day"))
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+modified_df %>%
+  drop_na(tmin, tmax) %>%
+  filter(year > 1992 & year <= 2007) %>%
+  mutate(month = 
+           fct_reorder(month, tmax)) %>%
+  group_by(year, month, id) %>%
+  summarize(mean_tmax = mean(tmax)) %>%
+  plot_ly(x = ~ month, 
+          y = ~ factor(mean_tmax), 
+          color = ~ month, 
+          colors = "viridis", 
+          type = "box") %>%
+  layout(
+    title = 
+      "Average Max Temperature Patter for Each Month from 1992-2007 in Celcius", 
+    xaxis = 
+      list(title = 
+             "Month"),
+    yaxis = 
+      list(title = 
+             "(Mean) Max Temperature (ºC)")) 
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+modified_df %>%
+  drop_na(tmin, tmax) %>%
+  filter(year == 2010) %>%
+  mutate(text_label = str_c("Max Temperature: ", tmax, 
+                            "\nMin Temperature: ", tmin, 
+                            "\nDate: ", month,"-",day,"-",year)) %>%
+  plot_ly(x = ~ tmin, 
+          y = ~ tmax,
+          type = "scatter",
+          mode = "markers",
+          alpha = 0.5,
+          color = ~ month,
+          colors = "viridis", 
+          text = ~ text_label) %>%
+  layout(title = 
+           "Minimum Temperature vs. Maximum Temperature in 2010",
+         xaxis = 
+           list(title = 
+                  "Minimum temperature (ºC) in 2010"),
+         yaxis = 
+           list(title = 
+                  "Maximum temperature (ºC) in 2010"))
+  
+```
+
+### Chart C
+
+```{r}
+modified_df %>%
+  filter(
+         year == 2005) %>%
+  mutate(month = 
+           fct_reorder(month, snow)) %>%
+  group_by(month) %>%
+  summarize(mean_prcp 
+            = mean(prcp))  %>%
+  plot_ly(x = ~ month, 
+          y = ~ mean_prcp, 
+          color = ~ month, 
+          colors = "viridis", 
+          type = "bar") %>%
+   layout(title = 
+           "Average Precipitation for Months in 2005",
+         xaxis = 
+           list(title = 
+                  "Month"),
+         yaxis = 
+           list(title = 
+                  "Mean Precipitation (mm)"))
+```
