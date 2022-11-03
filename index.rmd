@@ -1,5 +1,5 @@
 ---
-title: "Hey! Nice to Meet You:"
+title: "Hey! Nice to Meet You :)"
 output: html_document
 ---
 
